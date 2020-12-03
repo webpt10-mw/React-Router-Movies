@@ -29,7 +29,7 @@ export default function App() {
 	const addToSavedList = (id) => {
 		// This is stretch. Prevent the same movie from being "saved" more than once
 	};
-
+	console.log("list", movieList);
 	return (
 		<div>
 			<SavedList

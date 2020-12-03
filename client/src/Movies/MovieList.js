@@ -1,9 +1,12 @@
 import React from "react";
-import movies from "./Movie";
+import { Movie } from "./Movie";
+
+// const movies = movies();
 
 export default function MovieList(props) {
-	console.log(props);
-	console.log("movies", props.movies);
+	console.log("props", props);
+	// console.log("movies", props.movies());
+	console.log("This is 'movies'", Movie);
 	return (
 		<div className="movie-list">
 			{/* //? Why is 'movies' undefined? */}

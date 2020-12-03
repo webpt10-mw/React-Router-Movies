@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Movie(props) {
-	const [movie, setMovie] = useState([]);
+	const [movie, setMovie] = useState();
 
 	let id = 1;
 	// Change ^^^ that line and use a hook to obtain the :id parameter from the URL
@@ -22,6 +22,7 @@ export default function Movie(props) {
 		// the `id` changes... How could we do this?
 	}, [id]);
 
+	console.log("mov", movie);
 	// Uncomment this only when you have moved on to the stretch goals
 	// const saveMovie = evt => { }
 

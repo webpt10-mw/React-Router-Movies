@@ -1,14 +1,15 @@
 import React from "react";
-// import movies from "./Movie";
+import movies from "./Movie";
 
 export default function MovieList(props) {
-	// console.log(props);
+	console.log(props);
+	console.log("movies", props.movies);
 	return (
 		<div className="movie-list">
 			{/* //? Why is 'movies' undefined? */}
-			{props.movies.map((movie) => (
+			{/* {props.movies.map((movie) => (
 				<MovieDetails key={movie.id} movie={movie} />
-			))}
+			))} */}
 		</div>
 	);
 }

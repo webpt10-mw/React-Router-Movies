@@ -4,10 +4,10 @@ import Movie from "./Movie";
 // const movies = movies();
 
 export default function MovieList(props) {
-	const { movies } = props;
+	const movies = Movie;
 	console.log("props", props);
-	console.log("This is 'movies'", Movie);
-	console.log("SEE ME", props.movies);
+	console.log("This is 'movies'", Movie());
+	console.log("SEE ME", movies);
 	return (
 		<div className="movie-list">
 			{/* //? Why is 'movies' undefined? */}

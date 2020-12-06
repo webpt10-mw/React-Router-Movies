@@ -9,7 +9,7 @@ import Movie from "./Movies/Movie";
 export default function App() {
 	const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
 	const [movieList, setMovieList] = useState([]);
-	const [movieData] = useState(Movie());
+	const [movieData] = useState(Movie);
 
 	useEffect(() => {
 		const getMovies = () => {
@@ -40,15 +40,19 @@ export default function App() {
 				}
 			/>
 
-			<Route
+			<Route exact path="/" component={MovieList} />
+
+			{/* <Route
 				exact
 				path="/"
 				render={(props) => <MovieList {...props} />}
-			/>
+			/> */}
 
-			<Route path="/movies/:id">
+			<Route path="/movies/:id" component={Movie} />
+
+			{/*< path="/movies/:id">
 				<Movie data={movieData} />
-			</Route>
+			</> */}
 
 			{/* <div>Replace this Div with your Routes</div> */}
 		</div>

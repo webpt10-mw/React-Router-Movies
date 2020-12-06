@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function Movie(props) {
-	const [movie, setMovie] = useState();
-	const params = useParams();
-	const movieId = props.movies.find(
-		(movie) => movie.id === Number(params.id)
-	);
+	const [movie, setMovie] = useState([]);
+	// const params = useParams();
+	// const movieId = props.movies.find(
+	// 	(movie) => movie.id === Number(params.id)
+	// );
+
+	let id = 1;
 	// Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
 	useEffect(() => {
@@ -15,6 +17,7 @@ export default function Movie(props) {
 			.then((response) => {
 				console.log("res", response.data);
 				setMovie(response.data);
+				console.log("Inside Movie", movie);
 				// Study this response with a breakpoint or log statements
 				// and set the response data as the 'movie' slice of state
 			})
@@ -25,7 +28,6 @@ export default function Movie(props) {
 		// the `id` changes... How could we do this?
 	}, [id]);
 
-	console.log("mov", movie);
 	// Uncomment this only when you have moved on to the stretch goals
 	// const saveMovie = evt => { }
 
@@ -46,7 +48,6 @@ export default function Movie(props) {
 					Metascore: <strong>{metascore}</strong>
 				</div>
 				<h3>Actors</h3>
-
 				{stars.map((star) => (
 					<div key={star} className="movie-star">
 						{star}
